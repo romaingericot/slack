@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Slack prototype</title>
+    <link rel="shortcut icon" href="data:image/x-icon;" type="image/x-icon">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Varela">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+
+    <div class="d-flex slack-container">
+      <div class="organizations-sidebar">
+        <h2 class="organization active">LW</h2>
+        <h2 class="organization">SL</h2>
+      </div>
+
+      <div class="conversations-sidebar">
+        <h1>Le Wagon</h1>
+        <div class="person">
+          <div class="online-badge"></div>
+          <span>romain.gericot</span>
+        </div>
+        <div class="chat-section">
+          <div class="chat-section-header">
+            <h3>Channels</h3>
+            <i class="fas fa-plus"></i>
+          </div>
+          <div class="channel">
+            <span><i class="fab fa-slack-hash"></i> general</span>
+          </div>
+          <div class="channel">
+            <span><i class="fab fa-slack-hash"></i> help</span>
+          </div>
+          <div class="channel active">
+
+            <span><i class="fab fa-slack-hash"></i> design</span>
+          </div>
+          <div class="channel">
+            <span><i class="fas fa-lock"></i> friday-drinks</span>
+          </div>
+          <div class="channel">
+            <span><i class="fas fa-lock"></i> climbing</span>
+          </div>
+        </div>
+
+        <div class="chat-section">
+          <div class="chat-section-header">
+            <h3>Direct Messages</h3>
+            <i class="fas fa-plus"></i>
+          </div>
+          <div class="person">
+            <div class="online-badge"></div>
+            <span>Matz</span>
+          </div>
+          <div class="person">
+            <div class="online-badge"></div>
+            <span>ATuring</span>
+          </div>
+          <div class="person">
+            <div class="offline-badge"></div>
+            <span>SteveWozniak</span>
+          </div>
+          <div class="person">
+            <div class="offline-badge"></div>
+            <span>Zuckerberg</span>
+          </div>
+        </div>
+      </div>
+      <div class="chat-container">
+        <div class="chat-header">
+          <h1><i class="fab fa-slack-hash"></i> design</h1>
+        </div>
+        <div class="chat-conversations">
+          <div class="message">
+            <img src="data:image/jpeg;base64,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" alt="">
+            <div class="message-content">
+              <p><strong>romain.gericot</strong></p>
+              <p>Hey everyone 👋 We’ve just launched a new Le Wagon <strong>UI Kit</strong> 🚀 👉  <a href="https://uikit.lewagon.com/">https://uikit.lewagon.com/</a></p>
+            </div>
+          </div>
+
+          <div class="message">
+            <img src="https://kitt.lewagon.com/placeholder/users/cveneziani" alt="">
+            <div class="message-content">
+              <p><strong>cveneziani</strong></p>
+              <p>yay! 🤘</p>
+            </div>
+          </div>
+
+          <div class="message">
+            <img src="https://kitt.lewagon.com/placeholder/users/pdunleav" alt="">
+            <div class="message-content">
+              <p><strong>pdunleav</strong></p>
+              <p>That looks great, why don't you add a <code>.card</code> like on dribbble with a cool hover effect? 😎</p>
+            </div>
+          </div>
+
+          <div class="message">
+            <img src="https://kitt.lewagon.com/placeholder/users/barangerbenjamin" alt="">
+            <div class="message-content">
+              <p><strong>barangerbenjamin</strong></p>
+              <p>Does it work on Linux? 🤓</p>
+            </div>
+          </div>
+
+          <div class="message">
+            <img src="https://kitt.lewagon.com/placeholder/users/papillard" alt="">
+            <div class="message-content">
+              <p><strong>papillard</strong></p>
+              <p>Hi designers! A little tutorial I’ve made (french only, 🇬🇧 version coming soon!!!) covering:</p>
+
+              <p>- UX data (GA, Hotjar) and how to use it to re-think your sitemap</p>
+              <p>- Advanced UX workflow (Sketch > Invision > Abstract)</p>
+              <p>👉 <a href="https://kitt.lewagon.com/knowledge/tutorials/ux_advanced">https://kitt.lewagon.com/knowledge/tutorials/ux_advanced</a></p>
+              <p>Hope you’ll enjoy 📺 !</p>
+
+
+            </div>
+          </div>
+        </div>
+        <div class="chat-input">
+          <form action="" >
+            <input type="text" class="form-control" placeholder="Type your message...">
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Including Bootstrap JS (with its Popper.js / jQuery dependency) so that dynamic components work -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+  </body>
+</html>
